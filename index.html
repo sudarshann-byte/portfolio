@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudarshan Jha | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- 2. Smooth Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="counter">0</div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- 3. Project Detail Modal -->
+    <div class="project-modal">
+        <div class="modal-close-btn magnetic">
+            <i class="fas fa-times"></i> Close
+        </div>
+        <div class="modal-scroll-wrapper">
+            <div class="modal-content">
+                <div class="modal-left">
+                    <img src="" id="modal-img" alt="Project Preview">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title">Project Name</h2>
+                    <div class="modal-tags" id="modal-tags"></div>
+                    <p id="modal-desc">Description</p>
+                    <a href="#" id="modal-link" target="_blank" class="btn-visit magnetic">
+                        Visit Website <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main">
+        
+        <nav>
+            <div class="logo magnetic">Sudarshan Jha<span class="dot"></span></div>
+            <div class="nav-right">
+                <a href="mailto:sudarshann12@outlook.in" class="menu-link magnetic">Contact</a>
+                <div class="hamburger magnetic"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header id="hero">
+            <div class="hero-center">
+                <div class="hero-line"><h1 class="hero-h1">CREATIVE</h1></div>
+                <div class="hero-line"><h1 class="hero-h1 outline">FRONTEND</h1></div>
+                <div class="hero-line"><h1 class="hero-h1">DEVELOPER</h1></div>
+            </div>
+            
+            
+        </header>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-head">
+                <h5>TECHNICAL STACK</h5>
+            </div>
+            
+            <div class="tech-stack-container">
+                <!-- Row 1 -->
+                <div class="tech-row">
+                    <div class="tech-head">FRONTEND</div>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fab fa-html5" style="color: #E34F26;"></i> HTML5</div>
+                        <div class="tech-item"><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS3</div>
+                        <div class="tech-item"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript</div>
+                        <div class="tech-item"><i class="fab fa-react" style="color: #61DAFB;"></i> React.js</div>
+                        <div class="tech-item"><i class="fas fa-code" style="color: #FFA500;"></i> XML</div>
+                        <div class="tech-item"><i class="fab fa-bootstrap" style="color: #7952B3;"></i> Bootstrap</div>
+                        <div class="tech-item"><i class="fas fa-wind" style="color: #38B2AC;"></i> Tailwind</div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="tech-row">
+                    <div class="tech-head">DEV & BACKEND</div>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fas fa-mobile-alt" style="color: #fff;"></i> Native App</div>
+                        <div class="tech-item"><i class="fab fa-php" style="color: #777BB4;"></i> PHP</div>
+                        <div class="tech-item"><i class="fab fa-wordpress" style="color: #21759B;"></i> WordPress</div>
+                        <div class="tech-item"><i class="fas fa-bug" style="color: #ef4444;"></i> Debugging</div>
+                        <div class="tech-item"><i class="fas fa-tachometer-alt" style="color: #22c55e;"></i> Optimization</div>
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="tech-row">
+                    <div class="tech-head">DESIGN & TOOLS</div>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fab fa-figma" style="color: #F24E1E;"></i> Figma</div>
+                        <div class="tech-item"><i class="fab fa-sketch" style="color: #F7B500;"></i> Sketch</div>
+                        <div class="tech-item"><i class="fab fa-adobe" style="color: #FF0000;"></i> Adobe XD</div>
+                        <div class="tech-item"><i class="fab fa-git-alt" style="color: #F05032;"></i> Git</div>
+                    </div>
+                </div>
+                <!-- Row 4 -->
+                <div class="tech-row">
+                    <div class="tech-head">BUSINESS</div>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fas fa-handshake" style="color: #aaa;"></i> Negotiation</div>
+                        <div class="tech-item"><i class="fas fa-users" style="color: #aaa;"></i> CRM</div>
+                        <div class="tech-item"><i class="fas fa-bullhorn" style="color: #aaa;"></i> Lead Gen</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects List -->
+        <section id="work">
+            <div class="section-head">
+                <h5>PROJECTS</h5>
+                <p class="mobile-hide">(Click to view details)</p>
+            </div>
+
+            <div class="work-list">
+                <!-- Project 1 -->
+                <div class="work-item" 
+                     data-title="Portf-Gen" 
+                     data-desc="Built Portf-Gen, a dynamic portfolio generator. Users can create portfolios instantly."
+                     data-tags="HTML, CSS Modules, JavaScript, Figma, Bootstrap, Vercel"
+                     data-link="https://portf-gen.vercel.app/"
+                     data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop">
+                    <div class="work-info">
+                        <h2>01. Portf-Gen</h2>
+                        <span>Portfolio Generator</span>
+                    </div>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-item" 
+                     data-title="DilSeClicks" 
+                     data-desc="Designed DilSeClicks, a responsive photography website with smooth masonry layouts."
+                     data-tags="HTML, Bootstrap, Adobe XD, Vanilla JS, Sketch, Netlify, CSS Modules "
+                     data-link="https://dilseclicks.netlify.app/"
+                     data-img="https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=2536&auto=format&fit=crop">
+                    <div class="work-info">
+                        <h2>02. DilSeClicks</h2>
+                        <span>Photography Site</span>
+                    </div>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-head">
+                <h5>EXPERIENCE</h5>
+            </div>
+            
+            <div class="exp-container">
+                <!-- Item 1 -->
+                <div class="exp-item">
+                    <div class="exp-date">10/2025 - Present</div>
+                    <div class="exp-details">
+                        <h3>Hyperbot Technologies</h3>
+                        <h4>Frontend Developer / IT Support</h4>
+                        <p>Developing responsive web interfaces, optimizing performance, and troubleshooting hardware/network issues.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="exp-item">
+                    <div class="exp-date">10/2025 - 08/2025</div>
+                    <div class="exp-details">
+                        <h3>Hyperbot Technologies</h3>
+                        <h4>Business Development Executive</h4>
+                        <p>Drove new business acquisition through targeted lead generation and client relationship management.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="exp-item">
+                    <div class="exp-date">08/2023 - 05/2025</div>
+                    <div class="exp-details">
+                        <h3>Freelance Sales Team</h3>
+                        <h4>Real Estate - Resedential Properties</h4>
+                        <p>Working in a sales-driven environment has been one of the most powerful learning experiences of my career.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <h2>Let's create magic.</h2>
+                <div class="footer-contacts">
+                    <a href="mailto:sudarshann12@outlook.in" class="magnetic">sudarshann12@outlook.in</a>
+                    <a href="tel:+919324271481" class="magnetic">+91 9324271481</a>
+                </div>
+                <div class="socials">
+                    <a href="https://linkedin.com/in/sudarshan-jha-b3a93b317" target="_blank">LinkedIn &nbsp;<i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/sudarshann-byte" target="_blank">GitHub &nbsp;<i class="fab fa-github"></i></a>
+                </div>
+                <p class="copyright">&copy; 2026 Sudarshan Jha.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
