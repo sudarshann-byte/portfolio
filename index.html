@@ -1,55 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudarshan Jha | Portfolio</title>
+    <title>Sudarshan Jha | Frontend Developer</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- 1. Custom Cursor -->
+    <!-- Noise Overlay -->
+    <div class="noise"></div>
+
+    <!-- Gradient Background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
+    <div class="cursor-text">VIEW</div>
 
-    <!-- 2. Smooth Loader -->
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Smooth Loader -->
     <div class="loader">
         <div class="loader-content">
+            <div class="loader-logo">Welcome Techie!</div>
             <div class="counter">0</div>
-            <div class="loader-line"></div>
+            <div class="loader-line-wrapper">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-text">Loading Experience...</div>
         </div>
     </div>
 
-    <!-- 3. Project Detail Modal -->
+    <!-- Project Detail Modal -->
     <div class="project-modal">
-        <div class="modal-close-btn magnetic">
-            <i class="fas fa-times"></i> Close
-        </div>
-        <div class="modal-scroll-wrapper">
-            <div class="modal-content">
-                <div class="modal-left">
-                    <img src="" id="modal-img" alt="Project Preview">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-close-btn magnetic">
+                <span class="close-icon"></span>
+            </div>
+            <div class="modal-scroll-wrapper">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="modal-number">01</span>
+                        <h2 id="modal-title">Project Name</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-left">
+                            <div class="modal-img-wrapper">
+                                <img src="" id="modal-img" alt="Project Preview">
+                            </div>
+                        </div>
+                        <div class="modal-right">
+                            <div class="modal-section">
+                                <h4>Overview</h4>
+                                <p id="modal-desc">Description</p>
+                            </div>
+                            <div class="modal-section">
+                                <h4>Technologies</h4>
+                                <div class="modal-tags" id="modal-tags"></div>
+                            </div>
+                            <a href="#" id="modal-link" target="_blank" class="btn-visit magnetic">
+                                <span>Visit Live Site</span>
+                                <div class="btn-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-right">
-                    <h2 id="modal-title">Project Name</h2>
-                    <div class="modal-tags" id="modal-tags"></div>
-                    <p id="modal-desc">Description</p>
-                    <a href="#" id="modal-link" target="_blank" class="btn-visit magnetic">
-                        Visit Website <i class="fas fa-arrow-right"></i>
-                    </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <a href="#hero" class="mobile-link">Home</a>
+                <a href="#skills" class="mobile-link">Skills</a>
+                <a href="#work" class="mobile-link">Work</a>
+                <a href="#experience" class="mobile-link">Experience</a>
+                <a href="mailto:sudarshann12@outlook.in" class="mobile-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <div class="mobile-socials">
+                    <a href="https://linkedin.com/in/sudarshan-jha-b3a93b317" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/sudarshann-byte" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -57,166 +115,449 @@
 
     <!-- Main Content -->
     <div id="main">
-        
-        <nav>
-            <div class="logo magnetic">Sudarshan Jha<span class="dot"></span></div>
-            <div class="nav-right">
-                <a href="mailto:sudarshann12@outlook.in" class="menu-link magnetic">Contact</a>
-                <div class="hamburger magnetic"><i class="fas fa-bars"></i></div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo magnetic">
+                    <span class="logo-text">Sudarshan Jha</span>
+                    <span class="logo-dot"></span>
+                </a>
+                <div class="nav-links">
+                    <a href="#skills" class="nav-link magnetic" data-text="Skills">Skills</a>
+                    <a href="#work" class="nav-link magnetic" data-text="Work">Work</a>
+                    <a href="#experience" class="nav-link magnetic" data-text="Experience">Experience</a>
+                </div>
+                <div class="nav-right">
+                    <a href="mailto:sudarshann12@outlook.in" class="nav-contact magnetic">
+                        <span>Let's Talk</span>
+                        <i class="fas fa-arrow-up-right"></i>
+                    </a>
+
+                    <div class="hamburger magnetic">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
             </div>
         </nav>
 
         <!-- Hero Section -->
         <header id="hero">
+
+
             <div class="hero-center">
-                <div class="hero-line"><h1 class="hero-h1">CREATIVE</h1></div>
-                <div class="hero-line"><h1 class="hero-h1 outline">FRONTEND</h1></div>
-                <div class="hero-line"><h1 class="hero-h1">DEVELOPER</h1></div>
+                <div class="hero-line">
+                    <h1 class="hero-h1" data-text="CREATIVE">CREATIVE</h1>
+                </div>
+                <div class="hero-line">
+                    <h1 class="hero-h1 outline" data-text="FRONTEND">FRONTEND</h1>
+
+                </div>
+                <div class="hero-line">
+                    <h1 class="hero-h1" data-text="DEVELOPER">DEVELOPER</h1>
+                </div>
             </div>
-            
-            
+
+            <div class="hero-footer">
+                <div class="hero-info">
+                    <div class="info-item">
+                        <span class="info-label">Based in</span>
+                        <span class="info-value">Mumbai, India</span>
+                    </div>
+
+                </div>
+            </div>
         </header>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="section-head">
-                <h5>TECHNICAL STACK</h5>
+        <!-- Marquee Section -->
+        <section class="marquee-section">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span>HTML5</span>
+                    <span class="separator">✦</span>
+                    <span>CSS3</span>
+                    <span class="separator">✦</span>
+                    <span>JavaScript</span>
+                    <span class="separator">✦</span>
+                    <span>React.js</span>
+                    <span class="separator">✦</span>
+                    <span>Figma</span>
+                    <span class="separator">✦</span>
+                    <span>Web Design</span>
+                    <span class="separator">✦</span>
+                    <span>UI/UX</span>
+                    <span class="separator">✦</span>
+                    <span>WordPress</span>
+                    <span class="separator">✦</span>
+                    <span>HTML5</span>
+                    <span class="separator">✦</span>
+                    <span>CSS3</span>
+                    <span class="separator">✦</span>
+                    <span>JavaScript</span>
+                    <span class="separator">✦</span>
+                    <span>React.js</span>
+                    <span class="separator">✦</span>
+                    <span>Figma</span>
+                    <span class="separator">✦</span>
+                    <span>Web Design</span>
+                    <span class="separator">✦</span>
+                    <span>UI/UX</span>
+                    <span class="separator">✦</span>
+                    <span>WordPress</span>
+                    <span class="separator">✦</span>
+                </div>
             </div>
-            
-            <div class="tech-stack-container">
-                <!-- Row 1 -->
-                <div class="tech-row">
-                    <div class="tech-head">FRONTEND</div>
-                    <div class="tech-list">
-                        <div class="tech-item"><i class="fab fa-html5" style="color: #E34F26;"></i> HTML5</div>
-                        <div class="tech-item"><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS3</div>
-                        <div class="tech-item"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript</div>
-                        <div class="tech-item"><i class="fab fa-react" style="color: #61DAFB;"></i> React.js</div>
-                        <div class="tech-item"><i class="fas fa-code" style="color: #FFA500;"></i> XML</div>
-                        <div class="tech-item"><i class="fab fa-bootstrap" style="color: #7952B3;"></i> Bootstrap</div>
-                        <div class="tech-item"><i class="fas fa-wind" style="color: #38B2AC;"></i> Tailwind</div>
-                    </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-container">
+                <div class="about-left">
+                    <span class="section-label">ABOUT ME</span>
+                    <h2 class="about-title reveal-text">
+                        I craft digital experiences that blend
+                        <span class="highlight">aesthetics</span> with
+                        <span class="highlight">functionality</span>
+                    </h2>
                 </div>
-                <!-- Row 2 -->
-                <div class="tech-row">
-                    <div class="tech-head">DEV & BACKEND</div>
-                    <div class="tech-list">
-                        <div class="tech-item"><i class="fas fa-mobile-alt" style="color: #fff;"></i> Native App</div>
-                        <div class="tech-item"><i class="fab fa-php" style="color: #777BB4;"></i> PHP</div>
-                        <div class="tech-item"><i class="fab fa-wordpress" style="color: #21759B;"></i> WordPress</div>
-                        <div class="tech-item"><i class="fas fa-bug" style="color: #ef4444;"></i> Debugging</div>
-                        <div class="tech-item"><i class="fas fa-tachometer-alt" style="color: #22c55e;"></i> Optimization</div>
-                    </div>
-                </div>
-                <!-- Row 3 -->
-                <div class="tech-row">
-                    <div class="tech-head">DESIGN & TOOLS</div>
-                    <div class="tech-list">
-                        <div class="tech-item"><i class="fab fa-figma" style="color: #F24E1E;"></i> Figma</div>
-                        <div class="tech-item"><i class="fab fa-sketch" style="color: #F7B500;"></i> Sketch</div>
-                        <div class="tech-item"><i class="fab fa-adobe" style="color: #FF0000;"></i> Adobe XD</div>
-                        <div class="tech-item"><i class="fab fa-git-alt" style="color: #F05032;"></i> Git</div>
-                    </div>
-                </div>
-                <!-- Row 4 -->
-                <div class="tech-row">
-                    <div class="tech-head">BUSINESS</div>
-                    <div class="tech-list">
-                        <div class="tech-item"><i class="fas fa-handshake" style="color: #aaa;"></i> Negotiation</div>
-                        <div class="tech-item"><i class="fas fa-users" style="color: #aaa;"></i> CRM</div>
-                        <div class="tech-item"><i class="fas fa-bullhorn" style="color: #aaa;"></i> Lead Gen</div>
+                <div class="about-right">
+                    <p class="about-desc reveal-text">
+                        A passionate frontend developer based in Mumbai, India. I specialize in building modern,
+                        responsive web applications with a focus on user experience and clean code.
+                        With a background in both development and business development, I bring a unique
+                        perspective to every project.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-plus">+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="7">0</span>
+                            <span class="stat-plus">+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects List -->
-        <section id="work">
-            <div class="section-head">
-                <h5>PROJECTS</h5>
-                <p class="mobile-hide">(Click to view details)</p>
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <span class="section-label">EXPERTISE</span>
+                <h2 class="section-title">Technical Stack</h2>
             </div>
 
-            <div class="work-list">
-                <!-- Project 1 -->
-                <div class="work-item" 
-                     data-title="Portf-Gen" 
-                     data-desc="Built Portf-Gen, a dynamic portfolio generator. Users can create portfolios instantly."
-                     data-tags="HTML, CSS Modules, JavaScript, Figma, Bootstrap, Vercel"
-                     data-link="https://portf-gen.vercel.app/"
-                     data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop">
-                    <div class="work-info">
-                        <h2>01. Portf-Gen</h2>
-                        <span>Portfolio Generator</span>
+            <div class="tech-stack-container">
+                <!-- Row 1 -->
+                <div class="tech-row">
+                    <div class="tech-head">
+                        <span class="tech-number">01</span>
+                        <span class="tech-title">LANGUAGES</span>
                     </div>
-                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                    <div class="tech-list">
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-code"></i>
+                            <span>XML</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-wind"></i>
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="tech-row">
+                    <div class="tech-head">
+                        <span class="tech-number">02</span>
+                        <span class="tech-title">DESIGN & TOOLS</span>
+                    </div>
+                    <div class="tech-list">
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-wordpress"></i>
+                            <span>WordPress</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-sketch"></i>
+                            <span>Sketch</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-a"></i>
+                            <span>Adobe XD</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-terminal"></i>
+                            <span>Terminal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-row">
+                    <div class="tech-head">
+                        <span class="tech-number">03</span>
+                        <span class="tech-title">DEVELOPMENT SKILLS</span>
+                    </div>
+                    <div class="tech-list">
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-laptop"></i>
+                            <span>Responsive Web Design</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-mobile-screen"></i>
+                            <span>Native App</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-universal-access"></i>
+                            <span>UI/UX Controls & Accessibility</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-bolt"></i>
+                            <span>Performance Optimization</span>
+                        </div>
+                        <div class="tech-item magnetic">
+                            <i class="fas fa-bug"></i>
+                            <span>Debugging & Issue Resolution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="work">
+            <div class="section-header">
+                <span class="section-label">PORTFOLIO</span>
+                <h2 class="section-title">Selected Work</h2>
+            </div>
+
+            <div class="work-grid">
+                <!-- Project 1 -->
+                <div class="work-item" data-title="Portf-Gen" data-number="01"
+                    data-desc="Built Portf-Gen, a dynamic portfolio generator that allows users to create stunning portfolios instantly, Just by entering their Details. Features include real-time code Previews, Easy Clipboard Copying, and Responsive Design."
+                    data-tags="HTML, CSS Modules, JavaScript, Figma, Bootstrap, Vercel"
+                    data-link="https://portf-gen.vercel.app/"
+                    data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+                            alt="Portf-Gen">
+                        <div class="work-overlay">
+                            <span>View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-number">01</span>
+                            <span class="work-category">Web Application</span>
+                        </div>
+                        <h3 class="work-title">Portf-Gen</h3>
+                        <p class="work-subtitle">Portfolio Generator Platform</p>
+                        <div class="work-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="work-item" 
-                     data-title="DilSeClicks" 
-                     data-desc="Designed DilSeClicks, a responsive photography website with smooth masonry layouts."
-                     data-tags="HTML, Bootstrap, Adobe XD, Vanilla JS, Sketch, Netlify, CSS Modules "
-                     data-link="https://dilseclicks.netlify.app/"
-                     data-img="https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=2536&auto=format&fit=crop">
-                    <div class="work-info">
-                        <h2>02. DilSeClicks</h2>
-                        <span>Photography Site</span>
+                <div class="work-item" data-title="DilSeClicks" data-number="02"
+                    data-desc="Created DilSeClicks, an interactive photo booth website where users can click photos directly from their device, upload custom images, and apply various vintage photo templates. Features real-time preview, template switching, and instant downloads."
+                    data-tags="HTML, Bootstrap, Adobe XD, Vanilla JS, Sketch, Netlify, CSS Modules"
+                    data-link="https://dilseclicks.netlify.app/"
+                    data-img="https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=2536&auto=format&fit=crop">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=2536&auto=format&fit=crop"
+                            alt="DilSeClicks">
+                        <div class="work-overlay">
+                            <span>View Project</span>
+                        </div>
                     </div>
-                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-number">02</span>
+                            <span class="work-category">Photography Website</span>
+                        </div>
+                        <h3 class="work-title">DilSeClicks</h3>
+                        <p class="work-subtitle">Vintage PhotoBooth</p>
+                        <div class="work-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="work-cta">
+                <a href="https://github.com/sudarshann-byte" target="_blank" class="btn-outline magnetic">
+                    <span>View All Projects</span>
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience">
-            <div class="section-head">
-                <h5>EXPERIENCE</h5>
+            <div class="section-header">
+                <span class="section-label">JOURNEY</span>
+                <h2 class="section-title">Work Experience</h2>
             </div>
-            
-            <div class="exp-container">
+
+            <div class="exp-timeline">
                 <!-- Item 1 -->
                 <div class="exp-item">
-                    <div class="exp-date">10/2025 - Present</div>
-                    <div class="exp-details">
-                        <h3>Hyperbot Technologies</h3>
-                        <h4>Frontend Developer / IT Support</h4>
-                        <p>Developing responsive web interfaces, optimizing performance, and troubleshooting hardware/network issues.</p>
+                    <div class="exp-left">
+                        <span class="exp-date">Oct 2025 - Present</span>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-card">
+                            <div class="exp-card-header">
+                                <h3>Frontend Developer / IT Support</h3>
+                                <span class="exp-company">Hyperbot Technologies</span>
+                            </div>
+                            <p>Developing responsive web interfaces, optimizing performance, and troubleshooting
+                                hardware/network issues. Building modern UI components with React and implementing
+                                smooth animations.</p>
+                            <div class="exp-tags">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>IT Support</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <!-- Item 2 -->
                 <div class="exp-item">
-                    <div class="exp-date">10/2025 - 08/2025</div>
-                    <div class="exp-details">
-                        <h3>Hyperbot Technologies</h3>
-                        <h4>Business Development Executive</h4>
-                        <p>Drove new business acquisition through targeted lead generation and client relationship management.</p>
+                    <div class="exp-left">
+                        <span class="exp-date">Aug 2025 - Oct 2025</span>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-card">
+                            <div class="exp-card-header">
+                                <h3>Business Development Executive</h3>
+                                <span class="exp-company">Hyperbot Technologies</span>
+                            </div>
+                            <p>Drove new business acquisition through targeted lead generation and client relationship
+                                management. Developed strategic partnerships and improved conversion rates.</p>
+                            <div class="exp-tags">
+                                <span>Lead Generation</span>
+                                <span>CRM</span>
+                                <span>Sales</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <!-- Item 3 -->
                 <div class="exp-item">
-                    <div class="exp-date">08/2023 - 05/2025</div>
-                    <div class="exp-details">
-                        <h3>Freelance Sales Team</h3>
-                        <h4>Real Estate - Resedential Properties</h4>
-                        <p>Working in a sales-driven environment has been one of the most powerful learning experiences of my career.</p>
+                    <div class="exp-left">
+                        <span class="exp-date">Aug 2023 - May 2025</span>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-card">
+                            <div class="exp-card-header">
+                                <h3>Sales Executive</h3>
+                                <span class="exp-company">Freelance Real Estate Team</span>
+                            </div>
+                            <p>Working in a sales-driven environment selling residential properties. Developed strong
+                                negotiation skills and client management expertise.</p>
+                            <div class="exp-tags">
+                                <span>Real Estate</span>
+                                <span>Negotiation</span>
+                                <span>Client Relations</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <span class="section-label">GET IN TOUCH</span>
+                    <h2 class="contact-title">
+                        Let's create<br>
+                        something<br>
+                        <span class="gradient-text">amazing</span>
+                    </h2>
+                </div>
+                <div class="contact-right">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:sudarshann12@outlook.in" class="contact-value magnetic">
+                                sudarshann12@outlook.in
+                                <i class="fas fa-arrow-up-right"></i>
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Phone</span>
+                            <a href="https://wa.me/919324271481?text=Hello%20Sudarshan!%20Can%20We%20Connect?"
+                                class="contact-value magnetic" target="_blank">
+                                +91 9324271481
+                                <i class="fas fa-paper-plane" style="margin-left:6px;"></i> </a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Mumbai, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com/in/sudarshan-jha-b3a93b317" target="_blank"
+                            class="social-link magnetic">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/sudarshann-byte" target="_blank" class="social-link magnetic">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
         <footer>
             <div class="footer-container">
-                <h2>Let's create magic.</h2>
-                <div class="footer-contacts">
-                    <a href="mailto:sudarshann12@outlook.in" class="magnetic">sudarshann12@outlook.in</a>
-                    <a href="tel:+919324271481" class="magnetic">+91 9324271481</a>
+
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; 2026 Sudarshan Jha. All rights reserved.</p>
                 </div>
-                <div class="socials">
-                    <a href="https://linkedin.com/in/sudarshan-jha-b3a93b317" target="_blank">LinkedIn &nbsp;<i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/sudarshann-byte" target="_blank">GitHub &nbsp;<i class="fab fa-github"></i></a>
-                </div>
-                <p class="copyright">&copy; 2026 Sudarshan Jha.</p>
             </div>
         </footer>
 
@@ -227,4 +568,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
