@@ -858,20 +858,78 @@ body {
     border-top: 1px solid var(--border);
 }
 
+/* Work grid ko horizontal scroll banao - ye replace karo existing .work-grid se */
 .work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;  /* grid se flex mein change */
     gap: 40px;
     margin-top: 60px;
+    overflow-x: auto;  /* horizontal scroll enable */
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;  /* scrollbar ke liye space */
+    
+    /* Optional: Snap scrolling for better UX */
+    scroll-snap-type: x mandatory;
+    scroll-padding: 20px;
 }
 
+/* Custom scrollbar styling - ye add karo */
+.work-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.work-grid::-webkit-scrollbar-track {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+.work-grid::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.work-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient);
+}
+
+/* Work item ko fixed width do - ye update karo existing .work-item mein */
 .work-item {
+    flex: 0 0 400px;  /* ye add karo */
+    min-width: 400px;  /* ye add karo */
+    scroll-snap-align: start;  /* ye add karo for snap scrolling */
+    /* baaki sab existing styles rakho */
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border);
     border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s var(--ease-out-expo);
+}
+
+/* Responsive adjustments - ye end mein add karo */
+@media (max-width: 1200px) {
+    .work-item {
+        flex: 0 0 350px;
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-item {
+        flex: 0 0 300px;
+        min-width: 300px;
+    }
+    
+    .work-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-item {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
 }
 
 .work-item:hover {
